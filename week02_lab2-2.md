@@ -401,7 +401,8 @@ flutter run
 
 **บันทึกรูปผลการทดลอง**
 ```
-บันทึกรูปที่นี่
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/dad995b3-9f35-489f-9ac7-af2269f42388" />
+
 ```
 ---
 
@@ -461,12 +462,14 @@ flutter run
 
 **บันทึกรูปผลการทดลอง**
 ```
-บันทึกรูปที่นี่
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/a7ce50f3-f6ed-454d-ab33-019bf1c52873" />
+
 ```
 **✏️ ทดลองแก้ไข D:** ใน Row เพิ่ม Container D สีม่วง ขนาด 80×80 ต่อจาก C
 **บันทึกรูปผลการทดลอง**
 ```
-บันทึกรูปที่นี่
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/e852db9c-f627-4963-94a8-9a990a3625e9" />
+
 ```
 ---
 
@@ -581,14 +584,16 @@ class InfoCard extends StatelessWidget {
 **ขั้นตอนที่ 3** บันทึกและตรวจสอบผล — ควรเห็น Card 3 ใบเรียงกัน
 **บันทึกรูปผลการทดลอง**
 ```
-บันทึกรูปที่นี่
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/4c2dfcbb-828a-4617-8a9e-361a84326442" />
+
 ```
 
 **✏️ ทดลองแก้ไข E:** เพิ่ม `InfoCard` ที่ 4 แสดง "คณะ" ด้วยไอคอน `Icons.account_balance` สีแดง
 
 **บันทึกรูปผลการทดลอง**
 ```
-บันทึกรูปที่นี่
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/98d01fbe-0519-413d-9817-fb5b120a5566" />
+
 ```
 ---
 
