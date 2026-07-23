@@ -1443,20 +1443,20 @@ colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
 
 | | หลัง Hot Reload |
 |--|--|
-| สี Theme | |
-| ค่า Counter | |
+| สี Theme | Teal |
+| ค่า Counter | 15 |
 
 **ขั้นตอนที่ 5** กด **Hot Restart** (พิมพ์ `R` ใน Terminal หรือกด 🔄)
 
 | | หลัง Hot Restart |
 |--|--|
-| สี Theme | |
-| ค่า Counter | |
+| สี Theme | Teal |
+| ค่า Counter | 0 |
 
 **ขั้นตอนที่ 6** อธิบายผลลัพธ์:
 
-> Hot Reload: สี __________ Counter __________ เพราะ __________
-> Hot Restart: สี __________ Counter __________ เพราะ __________
+> Hot Reload: สี ____Teal______ Counter _____15_____ เพราะ ____Hot Reload ทำงานโดย Inject โค้ดที่แก้ไขเข้าไปใน Render Tree แล้วสั่ง Rebuild UI โดยที่ยังคงรักษา State เดิมของแอปพลิเคชันเอาไว้ในหน่วยความจำ______
+> Hot Restart: สี ____Teal______ Counter ____0______ เพราะ ____Hot Restart ทำงานโดยการรีสตาร์ทกระบวนการทั้งหมดของแอปพลิเคชันใหม่ สั่งรัน main() ใหม่ และล้าง State ทั้งหมดในหน่วยความจำให้กลับไปเป็นค่าเริ่มต้น (Initial State)______
 
 ---
 
@@ -1465,8 +1465,11 @@ colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
 เลือกทำอย่างน้อย **2 ข้อ** จากโจทย์ด้านล่าง:
 
 **โจทย์ A (ง่าย):** เพิ่ม Tab ที่ 4 ชื่อ "About" แสดงชื่อ รหัสนักศึกษา และคณะของตัวเอง พร้อมรูป Avatar (ใช้ `CircleAvatar` กับ Text แรกของชื่อ)
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/2bdd5578-bb5d-4208-9de4-559b2398d352" />
+
 
 **โจทย์ B (กลาง):** ใน Counter Page เพิ่ม History ที่บันทึกทุกการกระทำ (เพิ่ม/ลด/Reset) พร้อมเวลา เช่น "14:30:25 — เพิ่ม 5 (รวม: 15)" แสดงเป็น List ด้านล่าง Counter และมีปุ่ม "ล้าง History"
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/3558eb95-b776-411c-8b02-a420c73b77c2" />
 
 **โจทย์ C (กลาง):** ใน Form Page เพิ่ม Dropdown เลือก "ภาษาของคำทักทาย" (ไทย / อังกฤษ / ญี่ปุ่น) และเปลี่ยนข้อความคำทักทายตามภาษาที่เลือก
 
@@ -1478,16 +1481,25 @@ colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
 ### คำถามท้ายใบงาน
 
 **ข้อ 1** ทำไม Flutter ถึงเลือกวาด UI ด้วย Engine ของตัวเองแทนการใช้ Native Component? มีข้อดีและข้อเสียอย่างไร?
+เหตุผล: เพื่อให้ UI แสดงผลเหมือนกันทุกแพลตฟอร์มโดยไม่พึ่งพาคอนโทรลเลอร์ของ OS  
+ข้อดี: UI เหมือนกัน 100% ทุกระบบ, ประสิทธิภาพสูง, วาด UI ได้ละเอียด  
+ข้อเสีย: ขนาดไฟล์แอปใหญ่ขึ้น และ Native UI บางอย่างอาจดูไม่กลมกลืนถ้าไม่ปรับแต่ง
 
 **ข้อ 2** อธิบายความสัมพันธ์ของ Widget Tree, Element Tree และ RenderObject Tree และเหตุผลที่ต้องมีทั้ง 3 ส่วน
+Widget Tree เป็นพิมพ์เขียว, Element Tree เป็นตัวเก็บตำแหน่งและ State, RenderObject Tree เป็นตัววาดหน้าจอจริง มี 3 ส่วนเพื่อช่วยอัปเดตเฉพาะจุดที่เปลี่ยน ทำให้แอปทำงานได้เร็วขึ้น
 
 **ข้อ 3** อธิบายโครงสร้าง Widget Tree และความสัมพันธ์ระหว่าง Parent-Child Widget 
+Parent ส่งข้อจำกัดขนาดลงไปให้ Child, Child เลือกขนาดของตัวเองแล้วส่งคืน, จากนั้น Parent จึงจัดวางตำแหน่งให้ Child บนหน้าจอ
 
 **ข้อ 4** จากการทดลองที่ 4 ข้อ F (ลบ setState ออก) ผลที่เกิดขึ้นคืออะไร และอธิบายเหตุผลเชิงเทคนิคว่าทำไมจึงเกิดผลนั้น
+ค่าตัวแปรเปลี่ยนแต่ UI ไม่เปลี่ยน เพราะไม่มี setState() คอยส่งสัญญาณบอกให้สั่งเรียก build() เพื่อวาดหน้าจอใหม่
+
 
 **ข้อ 5** เมื่อออกแบบ Flutter App ที่มี Widget หลายตัว จะตัดสินใจอย่างไรว่า Widget ไหนควรเป็น Stateless และ Widget ไหนควรเป็น Stateful? ยกตัวอย่างจากใบงานนี้
+ใช้ Stateless เมื่อ UI นิ่งคงที่ เช่น InfoCard และใช้ Stateful เมื่อ UI เปลี่ยนตามข้อมูลหรือการโต้ตอบได้ เช่น CounterSection
 
 **ข้อ 6** เหตุใดจึงต้องเรียก `dispose()` และยกเลิก Timer ใน `ClockWidget`? หากไม่ทำจะเกิดอะไรขึ้นในระยะยาว?
+เพื่อป้องกัน Memory Leak จากการที่ Timer ยังคงทำงานใน Background แม้จะปิดหน้านั้นไปแล้ว
 
 ---
 
