@@ -400,10 +400,9 @@ flutter run
 **✏️ ทดลองแก้ไข B:** เปลี่ยน `fontSize: 24` เป็น `fontSize: 48` บันทึกไฟล์และสังเกตผล
 
 **บันทึกรูปผลการทดลอง**
-```
+
 <img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/dad995b3-9f35-489f-9ac7-af2269f42388" />
 
-```
 ---
 
 ### การทดลองที่ 2 — Layout Widgets: Column, Row, Container
@@ -461,16 +460,16 @@ flutter run
 **✏️ ทดลองแก้ไข C:** เปลี่ยน `MainAxisAlignment.center` ของ Column เป็น `.start`, `.end`, `.spaceBetween`, `.spaceEvenly` ทีละอัน สังเกตการเปลี่ยนแปลง
 
 **บันทึกรูปผลการทดลอง**
-```
+
 <img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/a7ce50f3-f6ed-454d-ab33-019bf1c52873" />
 
-```
+
 **✏️ ทดลองแก้ไข D:** ใน Row เพิ่ม Container D สีม่วง ขนาด 80×80 ต่อจาก C
 **บันทึกรูปผลการทดลอง**
-```
+
 <img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/e852db9c-f627-4963-94a8-9a990a3625e9" />
 
-```
+
 ---
 
 ### การทดลองที่ 3 — StatelessWidget แรก
@@ -583,18 +582,17 @@ class InfoCard extends StatelessWidget {
 
 **ขั้นตอนที่ 3** บันทึกและตรวจสอบผล — ควรเห็น Card 3 ใบเรียงกัน
 **บันทึกรูปผลการทดลอง**
-```
+
 <img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/4c2dfcbb-828a-4617-8a9e-361a84326442" />
 
-```
+
 
 **✏️ ทดลองแก้ไข E:** เพิ่ม `InfoCard` ที่ 4 แสดง "คณะ" ด้วยไอคอน `Icons.account_balance` สีแดง
 
 **บันทึกรูปผลการทดลอง**
-```
+
 <img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/98d01fbe-0519-413d-9817-fb5b120a5566" />
 
-```
 ---
 
 ### การทดลองที่ 4 — StatefulWidget: Counter
@@ -734,9 +732,8 @@ class _CounterSectionState extends State<CounterSection> {
 
 **ขั้นตอนที่ 3** บันทึกและทดลองกดปุ่ม +, -, Reset และสลับ Step
 **บันทึกรูปผลการทดลอง**
-```
-บันทึกรูปที่นี่
-```
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/951929a1-466d-4e55-9636-4a6d4b6b5e91" />
+
 
 
 **✏️ ทดลองแก้ไข F:** ทดลองลบ `setState()` ออก เหลือแค่ `_count += _step` แล้วกดปุ่ม สังเกตว่าตัวเลขไม่เปลี่ยนบนหน้าจอแม้ตัวแปรเปลี่ยน แล้วใส่ `setState()` กลับคืน
@@ -744,9 +741,9 @@ class _CounterSectionState extends State<CounterSection> {
 > **สิ่งที่เกิดขึ้น:** เมื่อไม่มี `setState()` ค่า `_count` เปลี่ยนในหน่วยความจำจริง แต่ Flutter ไม่รู้ว่าต้อง rebuild UI ทำให้หน้าจอยังแสดงค่าเดิม
 
 **บันทึกรูปผลการทดลอง**
-```
-บันทึกรูปที่นี่
-```
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/a7bc13c8-0186-4e54-92c9-c19bd8af604d" />
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/65d6a45b-4589-4158-a13e-2d6128383582" />
+
 ---
 
 ### การทดลองที่ 5 — StatefulWidget: Form และ Text Input
@@ -874,9 +871,8 @@ class _GreetingFormState extends State<GreetingForm> {
 **ขั้นตอนที่ 3** บันทึกและทดสอบ — กรอกชื่อแล้วกดปุ่ม
 
 **บันทึกรูปผลการทดลอง**
-```
-บันทึกรูปที่นี่
-```
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/17172afb-640a-407d-bba6-19580c3ba7fc" />
+
 
 **✏️ ทดลองแก้ไข G:** ทดลองกดปุ่มโดยไม่กรอกชื่อ สังเกตว่า Error Message ปรากฏ และกดปุ่ม Reset (clear field) แล้วสังเกตว่า Error หายไป
 
@@ -991,9 +987,8 @@ import 'dart:async';
 
 **ขั้นตอนที่ 4** บันทึกและดูผล — เวลาควรอัปเดตทุกวินาที
 **บันทึกรูปผลการทดลอง**
-```
-บันทึกรูปที่นี่
-```
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/f306b2d1-ff41-4045-bd68-637b4d465bab" />
+
 
 **✏️ ทดลองแก้ไข H:** ลองลบ `_timer?.cancel()` ใน `dispose()` แล้วสังเกต — ใน Debug Console อาจเห็น Warning "setState() called after dispose()" หลังจากออกจากหน้า แล้วใส่กลับคืน
 
@@ -1421,9 +1416,10 @@ class _GreetingFormState extends State<GreetingForm> {
 **ขั้นตอนที่ 3** ทดสอบทุก Tab และทุก Feature
 
 **บันทึกรูปผลการทดลอง**
-```
-บันทึกรูปที่นี่
-```
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/5dd1783c-04c8-448c-802b-5b3a0d3d2f86" />
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/699c9643-b84a-47da-b783-1e19137780f0" />
+<img width="1163" height="726" alt="image" src="https://github.com/user-attachments/assets/d020e7ac-eaf8-4c07-927e-2368ad4fcaa8" />
+
 ---
 
 ### การทดลองที่ 8 — Hot Reload vs Hot Restart
